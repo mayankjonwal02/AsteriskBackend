@@ -4,7 +4,7 @@
 This backend provides an admin-authenticated system for managing employees, MM collections, deposits, and generating financial reports. All endpoints (except login) require a valid JWT Bearer token in the `Authorization` header.
 
 ---
-
+base url : https://asterisk-backend-psi.vercel.app
 ## 1. Auth System
 
 ### POST `/auth/login`

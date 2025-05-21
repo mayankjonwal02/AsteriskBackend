@@ -10,9 +10,14 @@ const depositRoutes = require('../routes/deposits');
 const reportRoutes = require('../routes/reports');
 const { seedEmployees } = require('../controller/employeeController');
 const auth = require('../middlewares/auth');
+const cors = require('cors');
 require('dotenv').config();
 
 app.use(express.json());
+const corsOptions = {
+  origin: '*',
+  methods: ['GET', 'POST', 'PUT', 'DELETE']
+};
 
 // Connect to MongoDB
 connectDB();
@@ -40,3 +45,4 @@ app.use('/reports',auth, reportRoutes);
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
+module.exports = app;

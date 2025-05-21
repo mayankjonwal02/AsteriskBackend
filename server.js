@@ -20,7 +20,9 @@ seedEmployees();
 
 // Register /auth routes for login and token verification
 app.use('/auth', authRoutes);
-
+app.get('/', (req, res) => {
+  res.send('Welcome to the MM API');
+});
 // Protect all routes below with auth middleware
 app.use(auth);
 
@@ -36,9 +38,7 @@ app.use('/deposits', depositRoutes);
 // Register /reports routes for outstanding and payment report APIs
 app.use('/reports', reportRoutes);
 
-app.get('/', (req, res) => {
-  res.send('Welcome to the MM API');
-});
+
 // TODO: Add other routes here
 
 app.listen(PORT, () => {

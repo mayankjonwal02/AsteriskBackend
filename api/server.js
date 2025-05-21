@@ -18,6 +18,7 @@ const corsOptions = {
   origin: '*',
   methods: ['GET', 'POST', 'PUT', 'DELETE']
 };
+app.use(cors(corsOptions));
 
 // Connect to MongoDB
 connectDB();

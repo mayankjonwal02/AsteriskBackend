@@ -3,8 +3,8 @@ const router = express.Router();
 const collectionController = require('../controller/collectionController');
 const auth = require('../middlewares/auth');
 
-router.post('/', auth, collectionController.addCollection);
-router.get('/', auth, collectionController.getCollections);
-router.post('/bulk', auth, collectionController.addCollectionsBulk);
+router.post('/', collectionController.addCollection);
+router.get('/', collectionController.getCollections);
+router.post('/bulk', collectionController.addCollectionsBulk);
 
 module.exports = router;

@@ -3,7 +3,7 @@ const router = express.Router();
 const reportController = require('../controller/reportController');
 const auth = require('../middlewares/auth');
 
-router.get('/outstanding', auth, reportController.getOutstandingReport);
-router.get('/payments/:employeeId', auth, reportController.getPaymentReport);
+router.get('/outstanding', reportController.getOutstandingReport);
+router.get('/payments/:employeeId', reportController.getPaymentReport);
 
 module.exports = router;

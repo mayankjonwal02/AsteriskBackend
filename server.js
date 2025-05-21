@@ -24,7 +24,7 @@ app.get('/', (req, res) => {
   res.send('Welcome to the MM API');
 });
 // Protect all routes below with auth middleware
-app.use(auth);
+// app.use(auth);
 
 // Register /employees routes for employee management APIs
 app.use('/employees', employeeRoutes);

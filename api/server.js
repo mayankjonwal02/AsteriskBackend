@@ -24,16 +24,16 @@ app.get('/', (req, res) => {
   res.send('Welcome to the MM API');
 });
 // Protect all routes below with auth middleware
-app.use(auth);
+// app.use(auth);
 
 // Register /employees routes for employee management APIs
-app.use('/employees', employeeRoutes);
+app.use('/employees',auth, employeeRoutes);
 // Register /collections routes for MM collection APIs
-app.use('/collections', collectionRoutes);
+app.use('/collections',auth, collectionRoutes);
 // Register /deposits routes for MM deposit APIs
-app.use('/deposits', depositRoutes);
+app.use('/deposits',auth, depositRoutes);
 // Register /reports routes for outstanding and payment report APIs
-app.use('/reports', reportRoutes);
+app.use('/reports',auth, reportRoutes);
 // TODO: Add other routes here
 
 
